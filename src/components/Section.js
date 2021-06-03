@@ -78,7 +78,7 @@ const Button = styled.button`
   cursor: pointer;
 `;
 const DownArrow = styled.img`
-  display: ${(props) => (props.id != 1 ? "none" : "")};
+  display: ${(props) => (props.id !== 1 ? "none" : "")};
   height: 50px;
   animation: animateDown infinite 1.5s;
   @media (max-width: 768px) {
