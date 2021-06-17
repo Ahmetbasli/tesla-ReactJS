@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import Fade from "react-reveal/Fade";
 function Section({
   id,
   title,
@@ -11,10 +11,12 @@ function Section({
 }) {
   return (
     <Wrap backgroundImg={backgroundImg}>
-      <ItemText>
-        <h1>{title}</h1>
-        <p>{description}</p>
-      </ItemText>
+      <Fade bottom>
+        <ItemText>
+          <h1>{title}</h1>
+          <p>{description}</p>
+        </ItemText>
+      </Fade>
       <Buttons>
         <ButtonGroup>
           <Button tColor={"white"} bColor={"rgba(23, 26, 32, 0.8)"}>
@@ -22,7 +24,9 @@ function Section({
           </Button>
           {rightBtnText && <Button tColor={""}>{rightBtnText}</Button>}
         </ButtonGroup>
-        <DownArrow id={id} src="/images/down-arrow.svg" />
+        <Fade bottom>
+          <DownArrow id={id} src="/images/down-arrow.svg" />
+        </Fade>
       </Buttons>
     </Wrap>
   );
@@ -31,6 +35,7 @@ function Section({
 export default Section;
 
 const Wrap = styled.div`
+  z-index: -1;
   width: 100vw;
   height: 100vh;
   background-size: cover;
@@ -48,7 +53,7 @@ const ItemText = styled.div`
 `;
 const ButtonGroup = styled.div`
   width: 780px;
-  height: 105px;
+  height: 60px;
   display: flex;
   justify-content: center;
   @media (max-width: 768px) {
@@ -66,8 +71,8 @@ const Button = styled.button`
   margin: 0 10px;
   border: none;
   border-radius: 30px;
-  height: 48px;
-  width: 382px;
+  height: 32px;
+  width: 300px;
   @media (max-width: 768px) {
     height: 35px;
     width: 200px;
