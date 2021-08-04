@@ -5,6 +5,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 import CloseIcon from "@material-ui/icons/Close";
 import Fade from "react-reveal/Fade";
 function Header() {
+  //
   const [isNavBar, setisNavBar] = React.useState(false);
   console.log(isNavBar);
   return (
